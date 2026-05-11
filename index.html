@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuto Research Studio — AI-Augmented Supervision System</title>
+    <meta name="description" content="Empowering Professors. Guiding Students. The AI that handles the heavy lifting so mentors can focus on intellectual guidance.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGPHXM6WSD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VGPHXM6WSD');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A2E5A',
+                        gold: '#D4AF37',
+                        teal: '#008B8B',
+                        'navy-light': '#1A3E6A',
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #D4AF37, #E5C44A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .kanban-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .kanban-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .step-connector {
+            background-image: linear-gradient(to right, #D4AF37 50%, transparent 50%);
+            background-size: 20px 2px;
+            background-repeat: repeat-x;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-navy text-white fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="bg-gold text-navy font-bold p-2 rounded-lg">
+                        <i data-lucide="brain" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-xl tracking-tight">
+                        Thuto <span class="text-gold">Research Studio</span>
+                    </span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#workflow" class="hover:text-gold transition">Workflow</a>
+                    <a href="#studio" class="hover:text-gold transition">The Studio</a>
+                    <a href="#inclusion" class="hover:text-gold transition">Inclusion</a>
+                    <a href="#capabilities" class="hover:text-gold transition">Capabilities</a>
+                    <a href="#contact" class="bg-gold text-navy px-5 py-2 rounded-full font-bold hover:bg-yellow-500 transition">Join Pilot</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-navy pt-32 pb-20 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-light to-transparent opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div>
+                <div class="inline-flex items-center gap-2 bg-navy-light px-4 py-1 rounded-full text-gold text-sm font-semibold mb-6 border border-gold/30">
+                    <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
+                    Empowering Professors. Guiding Students.
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6">
+                    Bridging the <span class="gradient-text">Mentorship Gap</span> in SA Research.
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    A specialized AI-Augmented Supervision System for the South African landscape. The AI works for the Professor, so the Professor can work for the Student.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-gold text-navy px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-lg shadow-gold/20">
+                        Start Research Journey
+                    </button>
+                    <button class="border border-slate-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                        View Demo
+                    </button>
+                </div>
+                <div class="mt-10 flex items-center gap-6 text-sm text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-teal"></i>
+                        <span>POPIA Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="book-open" class="w-5 h-5 text-teal"></i>
+                        <span>NRF Aligned</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Mockup -->
+            <div class="relative">
+                <div class="bg-navy-light rounded-xl p-4 border border-slate-700 shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
+                    <!-- Browser Header -->
+                    <div class="flex items-center gap-2 mb-4 border-b border-slate-700 pb-3">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <div class="ml-4 bg-navy px-3 py-1 rounded text-xs text-slate-400 font-mono">thuto-research.ac.za/studio</div>
+                    </div>
+                    <!-- App Interface Mockup -->
+                    <div class="flex gap-4 h-64">
+                        <!-- Sidebar -->
+                        <div class="w-1/4 bg-slate-800 rounded-lg p-3 hidden md:block">
+                            <div class="text-xs text-slate-400 mb-2 uppercase font-bold">Sources</div>
+                            <div class="space-y-2">
+                                <div class="bg-navy p-2 rounded text-xs text-slate-300 truncate"><i data-lucide="file-text" class="w-3 h-3 inline mr-1 text-gold"></i> Draft_Chapter_1.pdf</div>
+                                <div class="bg-navy p-2 rounded text-xs text-slate-300 truncate"><i data-lucide="file-text" class="w-3 h-3 inline mr-1 text-gold"></i> Methodology_Notes.docx</div>
+                                <div class="text-xs text-teal mt-4"><i data-lucide="globe" class="w-3 h-3 inline mr-1"></i> Web Search</div>
+                            </div>
+                        </div>
+                        <!-- Main Chat -->
+                        <div class="flex-1 bg-slate-900 rounded-lg p-4 flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <div class="bg-navy p-3 rounded-lg rounded-tl-none max-w-[80%] text-xs text-slate-300">
+                                    Acting as a senior academic reviewer. Evaluating your methodology against NRF guidelines...
+                                </div>
+                                <div class="bg-teal/20 p-3 rounded-lg rounded-tr-none max-w-[80%] ml-auto text-xs text-white border border-teal/30">
+                                    <strong>System:</strong> I've flagged 3 areas where your sampling method lacks detail regarding township demographics.
+                                </div>
+                            </div>
+                            <div class="mt-4 bg-navy p-2 rounded text-xs text-slate-500 flex items-center justify-between">
+                                <span>Ask the AI about your sources...</span>
+                                <i data-lucide="send" class="w-4 h-4 text-gold"></i>
+                            </div>
+                        </div>
+                        <!-- Studio Panel -->
+                        <div class="w-1/4 bg-slate-800 rounded-lg p-3 hidden md:block">
+                            <div class="text-xs text-slate-400 mb-2 uppercase font-bold">Studio</div>
+                            <div class="space-y-2">
+                                <div class="bg-navy p-2 rounded text-xs text-slate-300"><i data-lucide="mic" class="w-3 h-3 inline mr-1 text-gold"></i> Audio Overview</div>
+                                <div class="bg-navy p-2 rounded text-xs text-slate-300"><i data-lucide="list" class="w-3 h-3 inline mr-1 text-gold"></i> Outline Gen</div>
+                                <div class="bg-navy p-2 rounded text-xs text-slate-300"><i data-lucide="check-square" class="w-3 h-3 inline mr-1 text-gold"></i> Checklist</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -right-6 bg-white text-navy p-4 rounded-xl shadow-xl border border-slate-200 max-w-[200px]">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-bold text-sm">Supervisor Approved</span>
+                    </div>
+                    <p class="text-xs text-slate-600">"Great improvement on the theoretical framework section."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Loop of Excellence Workflow -->
+    <section id="workflow" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">The "Loop of Excellence"</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Our unique 4-step workflow ensures quality, relevance, and deep intellectual engagement at every stage.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 relative hover:border-gold transition group">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-gold group-hover:text-navy transition">1</div>
+                    <h3 class="font-bold text-lg mb-2 text-navy">Submission Portal</h3>
+                    <p class="text-sm text-slate-600">Student uploads draft/assessment. System recognizes discipline (STEM, Humanities, Law) and institutional requirements.</p>
+                </div>
+
+                <!-- Connector (Desktop Only) -->
+                <div class="hidden lg:block absolute top-12 left-[27%] w-[18%] step-connector z-0"></div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 relative hover:border-gold transition group">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-gold group-hover:text-navy transition">2</div>
+                    <h3 class="font-bold text-lg mb-2 text-navy">AI-Supervisor Collaboration</h3>
+                    <p class="text-sm text-slate-600">AI scans text for logical flow, citation consistency, and methodology strength. Flags areas of concern for the Professor.</p>
+                </div>
+
+                <!-- Connector (Desktop Only) -->
+                <div class="hidden lg:block absolute top-12 left-[61%] w-[18%] step-connector z-0"></div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 relative hover:border-gold transition group">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-gold group-hover:text-navy transition">3</div>
+                    <h3 class="font-bold text-lg mb-2 text-navy">Dynamic Lit Fetching</h3>
+                    <p class="text-sm text-slate-600">Identifies gaps and suggests 5-10 hyper-relevant, peer-reviewed journals and local South African sources.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 relative hover:border-gold transition group">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-gold group-hover:text-navy transition">4</div>
+                    <h3 class="font-bold text-lg mb-2 text-navy">Professor Review</h3>
+                    <p class="text-sm text-slate-600">Supervisor reviews suggestions on a unified dashboard. Adds personal notes to send "Augmented Feedback" to student.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Studio Interface & Audio Customization -->
+    <section id="studio" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left: Description -->
+            <div>
+                <div class="inline-block bg-teal/20 text-teal px-3 py-1 rounded text-sm font-semibold mb-4">Customization & Accessibility</div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Personalize Your Research Experience</h2>
+                <p class="text-slate-300 mb-8 text-lg">
+                    We know AI can be intimidating. That's why Thuto Research Studio offers guided customization to fit your postgraduate needs, learning style, and language preferences.
+                </p>
+
+                <div class="space-y-6">
+                    <!-- Feature 1 -->
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center shrink-0 border border-slate-700">
+                            <i data-lucide="headphones" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Audio Overview Customization</h4>
+                            <p class="text-sm text-slate-400">Listen to your draft in <strong>English, isiZulu, Sesotho, or Afrikaans</strong>. Choose formats like "Deep Dive," "Critique," or "Viva Voce Prep."</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center shrink-0 border border-slate-700">
+                            <i data-lucide="list-checks" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Neurodiversity Support (ADHD)</h4>
+                            <p class="text-sm text-slate-400">Integrated calendar "check-ins," focus timers, and micro-task breakdowns to help students with ADHD stay on track without overwhelm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center shrink-0 border border-slate-700">
+                            <i data-lucide="eye" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Full Accessibility</h4>
+                            <p class="text-sm text-slate-400">Screen reader optimized, SASL (South African Sign Language) interpretation for key concepts, and voice-to-text drafting for visually impaired students.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Interface Mockup -->
+            <div class="bg-navy-light rounded-xl p-6 border border-slate-700 shadow-2xl">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="font-bold text-lg"><i data-lucide="mic" class="w-5 h-5 inline text-gold mr-2"></i> Customize Audio Overview</h3>
+                    <button class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-teal/20 border border-teal p-4 rounded-lg relative">
+                        <div class="absolute top-2 right-2"><i data-lucide="check" class="w-4 h-4 text-teal"></i></div>
+                        <h5 class="font-bold text-sm mb-1">Deep Dive</h5>
+                        <p class="text-xs text-slate-400">Lively conversation unpacking topics in your sources.</p>
+                    </div>
+                    <div class="bg-navy border border-slate-700 p-4 rounded-lg opacity-60 hover:opacity-100 transition cursor-pointer">
+                        <h5 class="font-bold text-sm mb-1">Critique</h5>
+                        <p class="text-xs text-slate-400">Expert review offering constructive feedback.</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm text-slate-400 mb-2">Choose Language</label>
+                    <div class="bg-navy border border-slate-600 rounded-lg p-3 flex items-center justify-between">
+                        <span class="text-sm">English</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm text-slate-400 mb-2">What should the AI focus on?</label>
+                    <div class="bg-navy border border-slate-600 rounded-lg p-3 h-24 text-sm text-slate-300">
+                        Describe how this framework supports students facing systemic barriers...
+                    </div>
+                </div>
+
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition">
+                    Generate Audio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kanban Project Management -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">Stay Organized. Pace Yourself.</h2>
+                <p class="text-lg text-slate-600">A Kanban-style dashboard linked to your research timeline and supervisor availability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 overflow-x-auto pb-4">
+                <!-- Card 1 -->
+                <div class="kanban-card bg-white p-4 rounded-xl shadow border-t-4 border-blue-500 min-w-[250px]">
+                    <div class="h-32 bg-blue-900 rounded-lg mb-4 relative overflow-hidden flex items-center justify-center">
+                        <i data-lucide="lightbulb" class="w-12 h-12 text-white/50"></i>
+                        <span class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Chapter 1</span>
+                    </div>
+                    <h4 class="font-bold text-navy">Prologue</h4>
+                    <p class="text-xs text-slate-500 mb-4">Building the AI Foundation</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" checked class="mt-1 accent-blue-500">
+                            <span class="text-slate-600 line-through">1.1 Introduction</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" checked class="mt-1 accent-blue-500">
+                            <span class="text-slate-600 line-through">1.2 Problem Statement</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-blue-500">
+                            <span class="text-slate-600">1.4 Research Questions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="kanban-card bg-white p-4 rounded-xl shadow border-t-4 border-purple-500 min-w-[250px]">
+                    <div class="h-32 bg-purple-900 rounded-lg mb-4 relative overflow-hidden flex items-center justify-center">
+                        <i data-lucide="search" class="w-12 h-12 text-white/50"></i>
+                        <span class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Chapter 2</span>
+                    </div>
+                    <h4 class="font-bold text-navy">Lens</h4>
+                    <p class="text-xs text-slate-500 mb-4">Synthesizing Digital Landscape</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" checked class="mt-1 accent-purple-500">
+                            <span class="text-slate-600 line-through">2.1 GenAI in Advising</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-purple-500">
+                            <span class="text-slate-600">2.4 Theoretical Framework</span>
+                        </div>
+                        <div class="mt-4 bg-yellow-50 text-yellow-700 text-xs p-2 rounded border border-yellow-200 flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i> Supervisor Feedback Due
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="kanban-card bg-white p-4 rounded-xl shadow border-t-4 border-teal-500 min-w-[250px]">
+                    <div class="h-32 bg-teal-900 rounded-lg mb-4 relative overflow-hidden flex items-center justify-center">
+                        <i data-lucide="settings" class="w-12 h-12 text-white/50"></i>
+                        <span class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Chapter 3</span>
+                    </div>
+                    <h4 class="font-bold text-navy">Method</h4>
+                    <p class="text-xs text-slate-500 mb-4">Engineering the Blueprint</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-teal-500">
+                            <span class="text-slate-600">3.1 Research Design</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-teal-500">
+                            <span class="text-slate-600">3.3 Data Collection</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 4 -->
+                 <div class="kanban-card bg-white p-4 rounded-xl shadow border-t-4 border-green-500 min-w-[250px]">
+                    <div class="h-32 bg-green-900 rounded-lg mb-4 relative overflow-hidden flex items-center justify-center">
+                        <i data-lucide="bar-chart-2" class="w-12 h-12 text-white/50"></i>
+                        <span class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Chapter 4</span>
+                    </div>
+                    <h4 class="font-bold text-navy">Findings</h4>
+                    <p class="text-xs text-slate-500 mb-4">Unveiling Impact</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-green-500">
+                            <span class="text-slate-600">4.1 Data Presentation</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-green-500">
+                            <span class="text-slate-600">4.3 Theme 2</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 5 -->
+                 <div class="kanban-card bg-white p-4 rounded-xl shadow border-t-4 border-pink-500 min-w-[250px]">
+                    <div class="h-32 bg-pink-900 rounded-lg mb-4 relative overflow-hidden flex items-center justify-center">
+                        <i data-lucide="mountain" class="w-12 h-12 text-white/50"></i>
+                        <span class="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">Chapter 5</span>
+                    </div>
+                    <h4 class="font-bold text-navy">Legacy</h4>
+                    <p class="text-xs text-slate-500 mb-4">Future-Proofing Education</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-pink-500">
+                            <span class="text-slate-600">5.1 Discussion</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm">
+                            <input type="checkbox" class="mt-1 accent-pink-500">
+                            <span class="text-slate-600">5.4 Recommendations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Capabilities Grid -->
+    <section id="capabilities" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">Key Capabilities</h2>
+                <p class="text-lg text-slate-600">Built specifically for the rigors of South African postgraduate research.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Capability 1 -->
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 hover:border-gold transition">
+                    <div class="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="glasses" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3 text-navy">Multi-Disciplinary Intelligence</h3>
+                    <p class="text-sm text-slate-600">Adjusts its "critical lens" based on the mode of supervision (e.g., Qualitative vs. Quantitative, Law vs. Humanities).</p>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 hover:border-gold transition">
+                    <div class="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="message-circle-heart" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3 text-navy">Constructive Feedback Loop</h3>
+                    <p class="text-sm text-slate-600">Generates suggestions that teach the student *how* to improve, rather than just pointing out errors.</p>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 hover:border-gold transition">
+                    <div class="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="search-check" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3 text-navy">Resource Discovery</h3>
+                    <p class="text-sm text-slate-600">Solves the "where to read" problem by fetching direct links to essential literature and missed citations.</p>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 hover:border-gold transition">
+                    <div class="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3 text-navy">Performance Analytics</h3>
+                    <p class="text-sm text-slate-600">Gives the Professor a bird's-eye view of student progress and common roadblocks across the cohort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact" class="py-20 bg-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAzIj48Y2lyY2xlIGN4PSIzIiBjeT0iMyIgcj0iMyIvPjwvZz48L3N2Zz4=')]"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Transform Your Research?</h2>
+            <p class="text-lg text-slate-300 mb-10">
+                Join the pilot programme for South African Postgraduate students and Supervisors. 
+                <br>Experience the "Loop of Excellence" today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contact@thutotech.co.za" class="bg-gold text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition shadow-lg shadow-gold/20">
+                    Request University Access
+                </a>
+                <a href="#" class="border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">
+                    Download Brochure
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-slate-500">Proudly South African. POPIA Compliant.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-4 text-white">
+                    <i data-lucide="brain" class="w-5 h-5 text-gold"></i>
+                    <span class="font-heading font-bold text-lg">Thuto Research Studio</span>
+                </div>
+                <p class="text-sm max-w-sm mb-6">
+                    Empowering Professors. Guiding Students. Building the future of South African academia through AI-augmented supervision.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-gold transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-gold transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-gold transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Platform</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gold">Student Portal</a></li>
+                    <li><a href="#" class="hover:text-gold">Supervisor Dashboard</a></li>
+                    <li><a href="#" class="hover:text-gold">Audio Studio</a></li>
+                    <li><a href="#" class="hover:text-gold">Timeline Manager</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gold">Help Center</a></li>
+                    <li><a href="#" class="hover:text-gold">Accessibility Options</a></li>
+                    <li><a href="#" class="hover:text-gold">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-gold">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-center text-xs">
+            &copy; 2025 Thuto Technologies (Pty) Ltd. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
